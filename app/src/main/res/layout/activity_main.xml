@@ -6,16 +6,135 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/mqtt_send"
+    <EditText
+        android:id="@+id/mainact_edt_dxychange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MQTT"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/mainact_btn_dyadd"
+        app:layout_constraintEnd_toEndOf="@+id/mainact_btn_dyde"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/mainact_btn_dyde" />
+
+    <Button
+        android:id="@+id/mainact_btn_dyde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="y-"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.708" />
+
+    <Button
+        android:id="@+id/mainact_btn_dxadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@+id/mainact_btn_yde"
+        app:layout_constraintTop_toTopOf="@+id/mainact_btn_dyde" />
+
+    <Button
+        android:id="@+id/mainact_btn_dxde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x-"
+        app:layout_constraintEnd_toStartOf="@+id/mainact_btn_yde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainact_btn_dyde" />
+
+    <Button
+        android:id="@+id/mainact_btn_yde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="👇"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <Button
+        android:id="@+id/mainact_btn_xadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="👉"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toEndOf="@+id/mainact_btn_yde"
+        app:layout_constraintTop_toTopOf="@+id/mainact_btn_yde" />
+
+    <Button
+        android:id="@+id/mainact_btn_xde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="👈"
+        app:layout_constraintEnd_toStartOf="@+id/mainact_btn_yde"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainact_btn_yde" />
+
+    <Button
+        android:id="@+id/mainact_btn_yadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="👆"
+        app:layout_constraintBottom_toTopOf="@+id/mainact_btn_yde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mainact_btn_dyadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="y+"
+        app:layout_constraintBottom_toTopOf="@+id/mainact_btn_dyde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/mainact_edt_xychange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/mainact_btn_yadd"
+        app:layout_constraintEnd_toEndOf="@+id/mainact_btn_yde"
+        app:layout_constraintStart_toStartOf="@+id/mainact_btn_yde" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="输入移动量"
+        app:layout_constraintBottom_toTopOf="@+id/mainact_btn_yadd"
+        app:layout_constraintEnd_toStartOf="@+id/mainact_edt_xychange"
+        app:layout_constraintTop_toTopOf="@+id/mainact_edt_xychange" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="输入比例缩放量"
+        app:layout_constraintBottom_toBottomOf="@+id/mainact_edt_dxychange"
+        app:layout_constraintEnd_toStartOf="@+id/mainact_edt_dxychange"
+        app:layout_constraintTop_toTopOf="@+id/mainact_edt_dxychange" /><![CDATA[
 
 
 
+    />
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
