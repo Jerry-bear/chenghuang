@@ -1,4 +1,4 @@
-package com.permissionx.xuewei
+package com.permissionx.xuewei.ui
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.permissionx.xuewei.R
 import com.permissionx.xuewei.mqtt.MQTTClient
 import com.permissionx.xuewei.mqtt.MqttClientCallBack
 
