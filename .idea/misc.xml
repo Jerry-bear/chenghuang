@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/bufanx/.gradle/caches/transforms-3/6204568a06fed4d4e4d5c6012c8efcb2/transformed/jetified-banner-1.4.10/res/drawable/gray_radius.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/activity_recognition.xml" value="0.176" />
+        <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/article_item.xml" value="0.2" />
         <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/fragment_first.xml" value="0.4" />
         <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/fragment_second.xml" value="0.2223731884057971" />
+        <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/layout/text_bg_gray.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/bufanx/AndroidStudioProjects/XueWei/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1296875" />
       </map>
     </option>

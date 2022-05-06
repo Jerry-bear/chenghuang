@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/materialCardView2"
         android:layout_width="332dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="39dp"
         android:paddingTop="10dp"
@@ -253,7 +253,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
         app:cardCornerRadius="7dp"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/article_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"/>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

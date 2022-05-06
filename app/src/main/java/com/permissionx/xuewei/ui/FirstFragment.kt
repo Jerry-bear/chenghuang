@@ -8,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.permissionx.xuewei.R
+import com.permissionx.xuewei.pojos.ArticleItem
+import com.permissionx.xuewei.pojos.HAdapter
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.Transformer
@@ -35,6 +39,9 @@ class FirstFragment : Fragment() ,OnBannerListener{
     //放标题的集合
     private val listTitle:ArrayList<String> =ArrayList()
     private lateinit var banner :Banner
+    private lateinit var rvH: RecyclerView
+    private lateinit var hAdapter:HAdapter
+    private val hListBean = mutableListOf<ArticleItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +57,7 @@ class FirstFragment : Fragment() ,OnBannerListener{
     ): View? {
         val view = inflater.inflate(R.layout.fragment_first, container, false)
         banner = view.findViewById(R.id.banner)
+        rvH = view.findViewById(R.id.article_rv)
         initView()
         return view
     }
@@ -75,13 +83,25 @@ class FirstFragment : Fragment() ,OnBannerListener{
     }
     //实现适配banner的适配器
     private fun initView() {
-
-        listPath.add("https://th.bing.com/th/id/R.529dc5f84c868be06154f4813c95b8f1?rik=jTXgjv%2bPzk9V2w&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20190804%2ff6d569cfd8ce4a60b82360dfb4f98757.jpeg&ehk=3OBe2uyiBEtDNFdOM%2fEG%2b06EtPPVYscXuj8ML%2fVzSjM%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1")
-        listPath.add("https://th.bing.com/th/id/R.ddc0638af0c31bbb4950d8df8223e5b6?rik=Umc%2fx%2fcpJ9kjLQ&riu=http%3a%2f%2fwww.wjtsm.com%2frepository%2fimage%2f4def3926-246f-43d6-b406-e83b133f7e95.jpg&ehk=EG0OoTUvLe8SBHp2dk6CfeJlw6kOAV554ZEDtvA3YsU%3d&risl=&pid=ImgRaw&r=0")
-        listPath.add("https://img-u-3.51miz.com/preview/muban/00/00/51/73/M-517364-958CB4FB.jpg-0.jpg")
-        listTitle.add("家常菜")
-        listTitle.add("海鲜")
-        listTitle.add("烧烤")
+        for (i in (0..20)) {
+            hListBean.add(ArticleItem("https://img-u-5.51miz.com/Templet/00/25/00/34/250034_3098eacc0eecdd9e913a53204e5abb68.jpg-1.jpg",
+            "针灸推拿心得","2022-5-6","文章",
+            "https://th.bing.com/th/id/R.2e3b8af2d80a1df5e59ab1c327e7cf1a?rik=ZkkPl44bRfFCAw&riu=http%3a%2f%2fd.lanrentuku.com%2fdown%2fpng%2f0907%2fTango-Emote%2fTango-Emote-17.png&ehk=witPtlmGc%2fdGE1PCRY0MjWHFCFEd1wJuLyNXcWPg6HU%3d&risl=&pid=ImgRaw&r=0",
+            "王鹏源",
+            "1145"))
+        }
+        rvH.layoutManager = object : LinearLayoutManager(context){}
+        hAdapter = HAdapter(context,R.layout.article_item,hListBean)
+        hAdapter.bindToRecyclerView(rvH)
+        rvH.adapter = hAdapter
+        listPath.add("https://www.bing.com/images/search?view=detailV2&ccid=SjFcxkpR&id=D81EC1D72524B011C8C0CAC03F7B320B65F9E20B&thid=OIP.SjFcxkpRhTo7nyvoq7AcBAEyDM&mediaurl=https%3a%2f%2fwww.scitechsoft.com%2fwp-content%2fuploads%2f2016%2f07%2fsuina.jpeg&exph=533&expw=800&q=%e6%8e%a8%e6%8b%bf&simid=608023049938078986&FORM=IRPRST&ck=EF1BEAAD519733AA8E7398F8BEEDB8E2&selectedIndex=2")
+        listPath.add("https://www.bing.com/images/search?view=detailV2&ccid=JIWIq%2bXN&id=4969E47B0F95E80DB10718B73C16EB76AD98128F&thid=OIP.JIWIq-XNoXc9-FHcRSud1wHaEt&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.248588abe5cda1773df851dc452b9dd7%3frik%3djxKYrXbrFjy3GA%26riu%3dhttp%253a%252f%252fwww.natureconceptcm.com%252fuploads%252f8%252f4%252f2%252f7%252f84270004%252f1269692664_orig.jpg%26ehk%3dcyUem8Pcafs5hyG5%252bpehy9dGL2b01q9eBlHhgMA8ywI%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=651&expw=1024&q=%e9%92%88%e7%81%b8&simid=607994784759898219&FORM=IRPRST&ck=92800812E7CF43E1CE13DC269BB1E38F&selectedIndex=3")
+        listPath.add("https://www.bing.com/images/search?view=detailV2&ccid=gMTtJlrX&id=10FCE55EA0FC7BBFC1B764037D301E68DD48F577&thid=OIP.gMTtJlrXLz-SoBxNU67oJAHaDs&mediaurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.80c4ed265ad72f3f92a01c4d53aee824%3frik%3dd%252fVI3WgeMH0DZA%26riu%3dhttp%253a%252f%252fpic.sc.chinaz.com%252ffiles%252fpic%252fpsd1%252f201611%252fpsd22414.jpg%26ehk%3dyE6L5a0rgwyVv6ASXn1cDJh6DVUGX%252btjKzc4BTmWt2o%253d%26risl%3d%26pid%3dImgRaw%26r%3d0&exph=299&expw=600&q=%e5%85%bb%e7%94%9f&simid=608035771631879622&FORM=IRPRST&ck=06D5729669E649F092467DFEFA6E7B33&selectedIndex=83")
+        listPath.add("https://th.bing.com/th/id/R.cb509dbc4fdf25efdffcc7b10e189076?rik=udaoAve43paLDg&riu=http%3a%2f%2fp2.qhimg.com%2ft019963a611a09357d3.jpg&ehk=mXdv4SBAm0Uh26qig4mi0W4SUke%2ftZ%2bGLjVs8KWBkug%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1")
+        listTitle.add("推拿")
+        listTitle.add("针灸")
+        listTitle.add("养生")
+        listTitle.add("艾灸")
 
         val myLoader=GlideImageLoader()
         //设置内置样式，共有六种可以点入方法内逐一体验使用。
